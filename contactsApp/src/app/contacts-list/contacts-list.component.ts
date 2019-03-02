@@ -7,12 +7,14 @@ import { ContactsListService } from './contacts-list-service.service';
   styleUrls: ['./contacts-list.component.css']
 })
 export class ContactsListComponent implements OnInit {
-  public isCollapsed = false;
+  private isCollapsed = false;
+  private contacts: any;
   constructor(private contactsListService: ContactsListService) { }
 
   ngOnInit() {
-    this.contactsListService.getContacts().subscribe((contacts) => {
-      console.log(contacts);
+    this.contactsListService.getContacts().subscribe((data) => {
+      console.log(data);
+      this.contacts = data.contacts;
     })
 
     
