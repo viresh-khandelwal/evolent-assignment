@@ -1,0 +1,39 @@
+{
+    "contacts":[
+        {
+            "name":"viresh",
+            "last-name":"khandelwal",
+            "phone": "7263962793",
+            "email":"vireshkhandelwal93@gmail.com",
+            "status": "active"
+        },
+        {
+            "name":"mitesh",
+            "last-name":"khandelwal",
+            "phone": "3456356756",
+            "email":"miteshkhandelwal93@gmail.com",
+            "status": "active"
+        },
+        {
+            "name":"yash",
+            "last-name":"deokar",
+            "phone": "234556567",
+            "email":"yquanta@gmail.com",
+            "status": "active"
+        },
+        {
+            "name":"vishal",
+            "last-name":"mishra",
+            "phone": "356567676",
+            "email":"vishal.mishara@gmail.com",
+            "status": "active"
+        },
+        {
+            "name":"harshit",
+            "last-name":"sahu",
+            "phone": "8978967898",
+            "email":"harshit.sahu@gmail.com",
+            "status": "inactive"
+        }
+    ]
+}
