@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactsListService } from './contacts-list-service.service';
+import { Router } from '@angular/router';
+import { SharedDataService } from '../services/shared-data-service/shared-data.service';
 
 @Component({
   selector: 'app-contacts-list',
@@ -7,15 +8,21 @@ import { ContactsListService } from './contacts-list-service.service';
   styleUrls: ['./contacts-list.component.css']
 })
 export class ContactsListComponent implements OnInit {
-  private isCollapsed = false;
   private contacts: any;
-  constructor(private contactsListService: ContactsListService) { }
+  constructor(
+    private sharedDataService: SharedDataService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    this.contactsListService.getContacts().subscribe((data) => {
-      console.log(data);
-      this.contacts = data.contacts;
+    this.sharedDataService.getContacts().subscribe((data) => {
+      this.contacts = data;
     })   
+  }
+
+  openContact(contact): void{
+     this.sharedDataService.setSelectedContact(contact);
+     this.router.navigate(['contact-card']);
   }
 
 }

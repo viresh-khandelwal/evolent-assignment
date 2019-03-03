@@ -1,4 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
+import { SharedDataService } from '../services/shared-data-service/shared-data.service';
 
 @Component({
   selector: 'app-contact-card',
@@ -6,8 +7,13 @@ import { Component, OnInit, Input} from '@angular/core';
   styleUrls: ['./contact-card.component.css']
 })
 export class ContactCardComponent implements OnInit {
-  constructor() { }
+  constructor(private sharedDataService: SharedDataService) { }
+  contact:any;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.sharedDataService.getSelectedContact().subscribe((contact) => {
+      this.contact = contact;
+    })
+  }
 
 }

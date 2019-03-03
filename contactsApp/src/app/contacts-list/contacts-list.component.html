@@ -27,5 +27,15 @@
       </tbody>
     </table>
   </div>
-  <app-contact-card ></app-contact-card>
+  <!-- <app-contact-card ></app-contact-card> -->
+  <div class="mobile-view-contacts-list">
+    <ul>
+      <li *ngFor = "let contact of contacts">
+        <div (click) = "openContact(contact)">
+          <div class="contact-name">{{contact.firstName + " " + contact.lastName}}</div>
+          <div class="phone">{{contact.phone}}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </section>

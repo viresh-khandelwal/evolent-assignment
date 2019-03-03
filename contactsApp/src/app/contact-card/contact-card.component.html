@@ -1,9 +1,10 @@
-<p>
-  contact-card works!
-</p>
 <div class="card">
-  <div class="card-header accordion" [appToggleCardBody] = "false">
-    Viresh khandelwal
+  <div class="card-header">
+    {{contact.firstName + contact.lastName}}
   </div>
-  <div class="card-body">Content</div>
+  <div class="card-body">
+    <div class="phone"> {{contact.phone}}</div>
+    <div class="email"> {{contact.email}}</div>
+    <div class="status"> {{contact.status}}</div>
+  </div>
 </div>
