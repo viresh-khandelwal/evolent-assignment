@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px){
+    .contacts-list-container .table-responsive{
+      display:none;
+    }
+
+    .user-icon,.phone-icon{
+        margin-right: 5px;
+    }
+}

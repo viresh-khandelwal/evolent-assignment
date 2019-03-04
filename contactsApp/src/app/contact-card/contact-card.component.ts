@@ -9,10 +9,12 @@ import { SharedDataService } from '../services/shared-data-service/shared-data.s
 export class ContactCardComponent implements OnInit {
   constructor(private sharedDataService: SharedDataService) { }
   contact:any;
+  contactActive:boolean = true;
 
   ngOnInit() {
     this.sharedDataService.getSelectedContact().subscribe((contact) => {
       this.contact = contact;
+      this.contactActive = contact.status == 'active' ? true : false
     })
   }
 

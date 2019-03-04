@@ -29,11 +29,17 @@
   </div>
   <!-- <app-contact-card ></app-contact-card> -->
   <div class="mobile-view-contacts-list">
-    <ul>
-      <li *ngFor = "let contact of contacts">
+    <ul class="list-group">
+      <li *ngFor = "let contact of contacts" class="list-group-item">
         <div (click) = "openContact(contact)">
-          <div class="contact-name">{{contact.firstName + " " + contact.lastName}}</div>
-          <div class="phone">{{contact.phone}}</div>
+          <div class="contact-name">
+            <span class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+            <span >{{contact.firstName + " " + contact.lastName}}</span>
+          </div>
+          <div class="phone">
+            <!-- <span class="phone-icon"><i class="fa fa-phone" aria-hidden="true"></i></span> -->
+            <span>{{contact.phone}}</span>
+          </div>
         </div>
       </li>
     </ul>

@@ -1,10 +1,16 @@
 <div class="card">
   <div class="card-header">
-    {{contact.firstName + contact.lastName}}
+    {{contact.firstName + " " + contact.lastName}}
   </div>
   <div class="card-body">
-    <div class="phone"> {{contact.phone}}</div>
-    <div class="email"> {{contact.email}}</div>
-    <div class="status"> {{contact.status}}</div>
+    <div class="phone"> 
+      <span class="phone-icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+      <span>{{contact.phone}}</span>
+    </div>
+    <div class="email"> 
+      <span class="email-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+      <span>{{contact.email}}</span>
+    </div>
+    <div [ngClass]="{'badge':true,'badge-primary':contactActive,'badge-secondary' : !contactActive}"> {{contact.status}}</div>
   </div>
 </div>

@@ -3,3 +3,11 @@
   width: 70px;
 }
 
+@media screen and (min-width: 768px){
+  .contacts-list-container .mobile-view-contacts-list{
+    display:none;
+  }
+}
+
+
+

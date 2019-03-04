@@ -5,7 +5,7 @@ import { SharedDataService } from '../services/shared-data-service/shared-data.s
 @Component({
   selector: 'app-contacts-list',
   templateUrl: './contacts-list.component.html',
-  styleUrls: ['./contacts-list.component.css']
+  styleUrls: ['./contact-list-mobile.component.css','./contacts-list.component.css']
 })
 export class ContactsListComponent implements OnInit {
   private contacts: any;
