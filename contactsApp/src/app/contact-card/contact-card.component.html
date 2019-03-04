@@ -1,6 +1,13 @@
 <div class="card">
   <div class="card-header">
-    {{contact.firstName + " " + contact.lastName}}
+    <span>{{contact.firstName + " " + contact.lastName}}</span>
+    <div ngbDropdown class="d-inline-block">
+        <i class="fa fa-ellipsis-v" id="dropdownBasic1" ngbDropdownToggle></i>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item">Edit</button>
+          <button class="dropdown-item">Delete</button>
+        </div>
+      </div>
   </div>
   <div class="card-body">
     <div class="phone"> 

@@ -1,3 +1,19 @@
 .phone-icon,.email-icon{
     margin-right: 5px;
 }
+
+.fa-ellipsis-v{
+    float:right;
+}
+
+.fa-ellipsis-v::after{
+    display: none;
+}
+
+.card-header .dropdown{
+    float: right;
+}
+
+.card-header .dropdown .dropdown-menu{
+    transform: translate(-170px,10px) !important;
+}

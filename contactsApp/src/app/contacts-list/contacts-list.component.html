@@ -21,11 +21,12 @@
           <td class="edit-delete">
             <button class="btn btn-primary ">Edit</button>
             <span> | </span>
-            <button class="btn btn-primary">Delete</button>
+            <button class="btn btn-primary" (click)="openModal(content,contact.phone)">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
+    <div><button class="btn btn-primary add-contact">Add Contact</button></div>
   </div>
   <!-- <app-contact-card ></app-contact-card> -->
   <div class="mobile-view-contacts-list">
@@ -43,5 +44,23 @@
         </div>
       </li>
     </ul>
+    <div class="fab"> + </div>
   </div>
+  <!-- modal -->
+  <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         Delete Contact ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Confirm')">Confirm</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('cnacel')">cancel</button>
+      </div>
+    </ng-template>
+    
 </section>

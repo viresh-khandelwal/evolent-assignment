@@ -6,7 +6,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactCardComponent } from './contact-card/contact-card.component';
-import { ToggleCardBodyDirective } from './directives/toggle-card-body.directive';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
@@ -14,7 +13,6 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     AppComponent,
     ContactsListComponent,
     ContactCardComponent,
-    ToggleCardBodyDirective,
   ],
   imports: [
     BrowserModule,
