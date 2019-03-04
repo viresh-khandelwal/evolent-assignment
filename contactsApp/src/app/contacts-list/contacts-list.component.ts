@@ -39,7 +39,17 @@ export class ContactsListComponent implements OnInit {
   }
 
   deleteContact(phone): void{
-
+    let contactIndex:number;
+    this.contacts.find((contact,index) => {
+      if(contact.phone == phone){
+        contactIndex = index;
+        return true;
+      }else{
+        return false;
+      }
+    })
+    this.contacts.splice(contactIndex,1);
+    this.sharedDataService.setContacts(this.contacts);  
   }
 
 
