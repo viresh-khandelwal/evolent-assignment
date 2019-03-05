@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../services/shared-data-service/shared-data.service';
-//import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-//import { BasicModalComponent } from '../basic-modal/basic-modal.component';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-contacts-list',
@@ -33,24 +31,9 @@ export class ContactsListComponent implements OnInit {
   openModal(content,phone) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       if(result == 'confirm'){
-        this.deleteContact(phone);
+        this.sharedDataService.deleteContact(phone);
       }
     });
   }
-
-  deleteContact(phone): void{
-    let contactIndex:number;
-    this.contacts.find((contact,index) => {
-      if(contact.phone == phone){
-        contactIndex = index;
-        return true;
-      }else{
-        return false;
-      }
-    })
-    this.contacts.splice(contactIndex,1);
-    this.sharedDataService.setContacts(this.contacts);  
-  }
-
 
 }
