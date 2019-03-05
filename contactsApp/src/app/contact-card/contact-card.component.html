@@ -4,7 +4,7 @@
     <div ngbDropdown class="d-inline-block">
         <i class="fa fa-ellipsis-v" id="dropdownBasic1" ngbDropdownToggle></i>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button class="dropdown-item">Edit</button>
+          <button class="dropdown-item" (click) = "sharedDataService.openContactEditPage(contact)">Edit</button>
           <button class="dropdown-item" (click)="openModal(content,contact.phone)">Delete</button>
         </div>
       </div>

@@ -12,4 +12,12 @@ export class ContactsHttpService {
   getContacts(): Observable<any>{
     return this.http.get('src/assets/data/contacts.json');
   }
+
+  saveContact(contact): Observable<any>{
+    return this.http.get('src/assets/data/contacts.json',contact);
+  }
+
+  deleteContact(phone):Observable<any>{
+    return this.http.get('src/assets/data/contacts.json',phone);
+  }
 }

@@ -1,0 +1,38 @@
+<section class="form_container" >
+  <form [formGroup]="contactDetailsForm" (ngSubmit)="submitForm()">
+    <div>
+      <div class="form-group">
+        <label for="firstName">firstName: </label>
+        <input type = "text" formControlName="firstName" name="firstName" id="firstName" class="form-control" />
+        <!-- <div class="error" *ngIf = "name.errors.required && name.touched">required</div> -->
+      </div>
+      <div class="form-group">
+        <label for="lastName">lastName: </label>
+        <input formControlName="lastName" name="lastName" id="lastName" class="form-control" />
+        <!-- <div class="error" *ngIf = "name.errors.required && name.touched">required</div> -->
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone: </label>
+        <input type = "text" formControlName="phone" name="phone" id="phone"  class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label for="email">email: </label>
+        <input type = "email" formControlName="email" name="email" id="email"  class="form-control"/>
+      </div>
+      <div>Status :</div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="status" formControlName="status" value = "active"> active
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input"  name="status" formControlName="status" value = "inactive"> inactive
+        </label>
+      </div>
+      <div class="submit-button-container">
+        <button class="btn btn-primary" type="submit">Save</button>
+      </div>
+    </div>
+  </form>
+</section>
