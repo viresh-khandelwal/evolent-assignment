@@ -19,6 +19,8 @@ export class EditContactComponent implements OnInit {
   private contact: Contact
   private contactDetailsForm: FormGroup;
   private operationType: string;
+  private submitPressed: boolean = false
+  get f() { return this.contactDetailsForm.controls; }
 
   ngOnInit() {
     //console.log(this.activatedRoute.url);
@@ -41,7 +43,7 @@ export class EditContactComponent implements OnInit {
       firstName: new FormControl(contact.firstName, [Validators.required]),
       lastName: new FormControl(contact.lastName, [Validators.required]),
       phone: new FormControl(contact.phone, [Validators.required, Validators.pattern(/^\d+$/)]),
-      email: new FormControl(contact.email, [Validators.required]),
+      email: new FormControl(contact.email, [Validators.required,Validators.email]),
       status: new FormControl(contact.status, [Validators.required]),
     });
   }
@@ -51,7 +53,8 @@ export class EditContactComponent implements OnInit {
     if (this.contactDetailsForm.status == "VALID") {
         this.sharedDataService.saveContact(this.contactDetailsForm.value,this.operationType);
     } else {
-      console.log("invalid form details");
+      this.submitPressed = true;
+      console.log("invalid form details",this.f);
     };
 
   }

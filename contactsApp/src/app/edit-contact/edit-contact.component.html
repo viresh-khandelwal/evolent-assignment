@@ -1,34 +1,51 @@
-<section class="form_container" >
+<section class="form_container">
   <form [formGroup]="contactDetailsForm" (ngSubmit)="submitForm()">
     <div>
       <div class="form-group">
         <label for="firstName">firstName: </label>
-        <input type = "text" formControlName="firstName" name="firstName" id="firstName" class="form-control" />
-        <!-- <div class="error" *ngIf = "name.errors.required && name.touched">required</div> -->
+        <input type="text" formControlName="firstName" name="firstName" id="firstName" class="form-control" />
+        <div class="alert alert-danger" *ngIf="submitPressed && f.firstName.errors">
+          <div *ngIf="f.firstName.errors?.required">* first name is required</div>
+        </div>
+
       </div>
       <div class="form-group">
         <label for="lastName">lastName: </label>
         <input formControlName="lastName" name="lastName" id="lastName" class="form-control" />
-        <!-- <div class="error" *ngIf = "name.errors.required && name.touched">required</div> -->
+        <div class="alert alert-danger" *ngIf="submitPressed && f.lastName.errors">
+          <div *ngIf="f.lastName.errors?.required">* last name is required</div>
+        </div>
       </div>
       <div class="form-group">
         <label for="phone">Phone: </label>
-        <input type = "text" formControlName="phone" name="phone" id="phone"  class="form-control"/>
+        <input type="text" formControlName="phone" name="phone" id="phone" class="form-control" />
+        <div class="alert alert-danger" *ngIf="submitPressed && f.phone.errors">
+          <div *ngIf="f.phone.errors?.required">* phone number is required</div>
+          <div *ngIf="f.phone.errors?.pattern">* please enter a Phone number</div>
+        </div>
       </div>
       <div class="form-group">
         <label for="email">email: </label>
-        <input type = "email" formControlName="email" name="email" id="email"  class="form-control"/>
+        <input type="email" formControlName="email" name="email" id="email" class="form-control" />
+        <div class="alert alert-danger" *ngIf="submitPressed && f.email.errors">
+          <div *ngIf="f.email.errors?.required">* email is required</div>
+          <div *ngIf="f.email.errors?.email">* please enter a valid email</div>
+        </div>
       </div>
       <div>Status :</div>
       <div class="form-check-inline">
         <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="status" formControlName="status" value = "active"> active
+          <input type="radio" class="form-check-input" name="status" formControlName="status" value="active"> active
         </label>
       </div>
       <div class="form-check-inline">
         <label class="form-check-label">
-          <input type="radio" class="form-check-input"  name="status" formControlName="status" value = "inactive"> inactive
+          <input type="radio" class="form-check-input" name="status" formControlName="status" value="inactive">
+          inactive
         </label>
+      </div>
+      <div class="alert alert-danger" *ngIf="submitPressed && f.status.errors">
+        <div *ngIf="f.status.errors?.required">* status is required</div>
       </div>
       <div class="submit-button-container">
         <button class="btn btn-primary" type="submit">Save</button>
