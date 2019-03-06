@@ -2,6 +2,17 @@
 
 Contacts Management  App 
 
+Instructions to run the application :
+1.	Pre-requisites :  One needs to have node.js and angular-cli installed for running this application
+2.	Download the application code from github link “https://github.com/viresh-khandelwal/evolent-assignment”
+3.	Go to the path “evolent-assignment/contactsApp/”  where package.json file is present
+4.	Open command prompt and run command “npm install” which would install node-modules.
+5.	Now run the command “ng serve” .
+6.	When the application compiles successfully open the browser and in the address bar type address “http://localhost:4200/ “and then       you will be to see the application in your browser.
+7.	To see the mobile view , go to the browesr console and press the mobile icon.
+8.	There is an “AppScreenshots” folder which contains the screenshots of different pages of the application in mobile and desktop view     One can see these screeshots to check whether the application is working correctly or not
+
+
 •	Path to application’s modules, components, and services :   evolent-assignment\contactsApp\src\app
 
 •	Components:
