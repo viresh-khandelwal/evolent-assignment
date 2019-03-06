@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../services/shared-data-service/shared-data.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contacts-list',
   templateUrl: './contacts-list.component.html',
   styleUrls: ['./contact-list-mobile.component.css', './contacts-list.component.css']
 })
-export class ContactsListComponent implements OnInit {
+export class ContactsListComponent implements OnInit,OnDestroy {
   private contacts: any;
   closeResult: string;
+  private contactsSubscription: Subscription;
+  
   constructor(
     private sharedDataService: SharedDataService,
     private router: Router,
@@ -18,7 +21,7 @@ export class ContactsListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.sharedDataService.getContacts().subscribe((data) => {
+    this.contactsSubscription = this.sharedDataService.getContacts().subscribe((data) => {
       this.contacts = data;
     })
   }
@@ -34,6 +37,10 @@ export class ContactsListComponent implements OnInit {
         this.sharedDataService.deleteContact(phone);
       }
     });
+  }
+
+  ngOnDestroy(){
+    this.contactsSubscription.unsubscribe();
   }
 
 }

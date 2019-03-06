@@ -19,11 +19,10 @@ export class EditContactComponent implements OnInit {
   private contact: Contact
   private contactDetailsForm: FormGroup;
   private operationType: string;
-  private submitPressed: boolean = false
+  private submitPressed: boolean = false;
   get f() { return this.contactDetailsForm.controls; }
 
   ngOnInit() {
-    //console.log(this.activatedRoute.url);
     this.activatedRoute.params.subscribe(
       (params) => {
         if (!params.phone) {

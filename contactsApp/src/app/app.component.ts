@@ -16,7 +16,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.contactsHttpService.getContacts().subscribe((data) => {
-      console.log(data);
       this.contacts = data.contacts;
       this.sharedDataService.setContacts(this.contacts);
     })   
